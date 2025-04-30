@@ -32,6 +32,7 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 // POST a new user
 export const createUser = async (req: Request, res: Response): Promise<void> => {
     try {
+        console.log(req.body); // Log the request body
         const user = await User.create(req.body);
         res.status(201).json(user);
     } catch (error: any) {

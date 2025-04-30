@@ -37,15 +37,15 @@ export const getThoughtById = async (req: Request, res: Response) => {
 
 // POST to create a new thought
 export const createThought = async (req: Request, res: Response) => {
-    const { userId, text } = req.body;
+    const { userId,} = req.body;
 
-    if (!userId || !text) {
-        return res.status(400).json({ message: 'User ID and text are required' });
-    }
+    // if (!userId || !text) {
+    //     return res.status(400).json({ message: 'User ID and text are required' });
+    // }
 
-    if (!mongoose.isValidObjectId(userId)) {
-        return res.status(400).json({ message: 'Invalid user ID' });
-    }
+    // if (!mongoose.isValidObjectId(userId)) {
+    //     return res.status(400).json({ message: 'Invalid user ID' });
+    // }
 
     try {
         const thought = await Thought.create(req.body);
